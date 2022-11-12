@@ -1,0 +1,57 @@
+@use '@angular/material' as mat;
+
+$my-palette: mat.define-palette(mat.$red-palette);
+$green-palette: mat.define-palette(mat.$green-palette);
+$red: mat.get-color-from-palette($my-palette, 600);
+$green: mat.get-color-from-palette($green-palette);
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  box-shadow: 1px 0px 5px #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.btn {
+  color: white;
+  border-color: white;
+}
+
+.logo {
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.active {
+  background: white;
+  border-color: $green;
+  color: $green;
+}
+
+.sign {
+  &:hover {
+    background: white;
+    border-color: $green;
+    color: $green;
+  }
+}
+
+.logout {
+  &:hover {
+    background: $red;
+    border-color: $red;
+  }
+}

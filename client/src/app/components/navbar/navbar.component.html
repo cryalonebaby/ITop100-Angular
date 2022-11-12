@@ -1,0 +1,10 @@
+<mat-toolbar class="navbar" color="primary">
+  <h2 class="logo" (click)="goHome()">Products App</h2>
+  <div class="buttons" *ngIf="!isLogged">
+    <button class="btn sign" mat-stroked-button routerLink="/sign-up" routerLinkActive="active">Sign Up</button>
+    <button class="btn sign" mat-stroked-button routerLink="/sign-in" routerLinkActive="active">Sign In</button>
+  </div>
+  <div class="buttons" *ngIf="isLogged">
+    <button class="btn logout" mat-stroked-button (click)="logout()">Logout</button>
+  </div>
+</mat-toolbar>

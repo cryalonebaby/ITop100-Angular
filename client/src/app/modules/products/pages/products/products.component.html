@@ -1,0 +1,19 @@
+<div class="wrapper">
+  <div class="spinner" *ngIf="loading">
+    <div>
+      <mat-spinner></mat-spinner>
+    </div>
+  </div>
+  <div class="add-wrapper" *ngIf="!loading">
+    <button (click)="add()" class="add-btn" mat-fab color="primary">+</button>
+  </div>
+  <div class="container" *ngIf="!loading">
+    <app-card
+      *ngFor="let product of productsService.products"
+      [price]="product.price"
+      [id]="product.id"
+      [title]="product.title"
+      [image]="product.image"
+    ></app-card>
+  </div>
+</div>

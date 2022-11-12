@@ -1,0 +1,52 @@
+@use '@angular/material' as mat;
+$my-palette: mat.define-palette(mat.$green-palette);
+$primary: mat.get-color-from-palette($my-palette);
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  height: 450px;
+  background: rgb(248, 246, 246);
+  padding-bottom: 20px;
+}
+
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.title {
+  line-height: 125%;
+  color: $primary;
+  font-weight: bold;
+}
+
+.image {
+  float: left;
+  width: 250px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.price {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+.details {
+  color: $primary;
+  &:hover {
+    color: white;
+    background: $primary;
+  }
+}

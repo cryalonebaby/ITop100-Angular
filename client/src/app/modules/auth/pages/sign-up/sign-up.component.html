@@ -1,0 +1,31 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>SignUp</h1>
+    <form class="form" [formGroup]="form" (ngSubmit)="signUp()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Username</mat-label>
+        <input
+          formControlName="username" 
+          matInput
+          appFocus
+        />
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password"/>
+      </mat-form-field>
+      <p 
+        class="error" 
+        *ngIf="password.errors && password.touched"
+      >Password must be at least 6 symbols</p>
+
+      <button 
+        type="submit"
+        mat-raised-button 
+        color="warn"
+        [disabled]="username.errors || password.errors"
+      >Sign Up</button>
+    </form>
+  </div>
+</div>
+

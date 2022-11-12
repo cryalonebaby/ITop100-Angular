@@ -1,0 +1,13 @@
+<mat-card class="card">
+  <mat-card-title class="title">{{title | sliceText}}</mat-card-title>
+  <mat-card-content class="content">
+    <img class="image" *ngIf="image" [src]="image" alt="product">
+    <div *ngIf="!image">
+      <p>Loading...</p>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="actions">
+    <button class="details" mat-raised-button (click)="detailPage(id)">Details</button>
+    <span class="price">{{price | currency: '$'}}</span>
+  </mat-card-actions>
+</mat-card>

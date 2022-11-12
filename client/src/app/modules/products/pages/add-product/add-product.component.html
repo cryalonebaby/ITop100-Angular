@@ -1,0 +1,38 @@
+<div class="wrapper">
+  <div class="container">
+    <h1>Add Your Product</h1>
+    <form class="form" [formGroup]="form" (ngSubmit)="create()">
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Product`s Title</mat-label>
+        <input 
+          formControlName="title" 
+          matInput
+          appFocus
+        />
+      </mat-form-field>
+      <p 
+        class="error" 
+        *ngIf="title.errors && title.touched"
+      >Title must be at least 6 symbols</p>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Price</mat-label>
+        <input formControlName="price" type="number" matInput/>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Category</mat-label>
+        <input formControlName="category" matInput/>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Description</mat-label>
+        <textarea formControlName="description" matInput rows="4"></textarea>
+      </mat-form-field>
+
+      <button 
+        type="submit"
+        mat-raised-button 
+        color="warn"
+        [disabled]="title.errors || price.errors || category.errors || description.errors"
+      >Create Product</button>
+    </form>
+  </div>
+</div>

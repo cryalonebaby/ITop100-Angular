@@ -1,0 +1,18 @@
+<div class="wrapper" *ngIf="product">
+  <div class="container">
+    <img class="image" [src]="product.image" alt="Product">
+    <div class="info">
+      <div>
+        <h1 class="title">{{product.title}}</h1>
+        <span class="category">Category: <span class="category-name">{{product.category}}</span></span>
+      </div>
+      <p class="rating" *ngIf="product.rating">
+        Rating: 
+        <span class="rating-rate">{{product.rating.rate}}</span>
+        <span class="rating-count">({{product.rating.count}})</span>
+      </p>
+      <h2 class="price">{{product.price | currency: '$'}}</h2>
+      <h3 class="desc">{{product.description}}</h3>
+    </div>
+  </div>
+</div>
